@@ -1,0 +1,47 @@
+{
+  "@@locale": "id",
+  "appTitle": "Agory",
+  "@appTitle": {
+    "description": "Nama aplikasi, ditampilkan sebagai judul window/tab"
+  },
+  "signUpScreenTitle": "Daftar Akun",
+  "@signUpScreenTitle": {
+    "description": "Judul AppBar di halaman sign up"
+  },
+  "emailFieldLabel": "Email",
+  "@emailFieldLabel": {
+    "description": "Label field input email"
+  },
+  "passwordFieldLabel": "Password",
+  "@passwordFieldLabel": {
+    "description": "Label field input password"
+  },
+  "signUpButtonLabel": "Daftar",
+  "@signUpButtonLabel": {
+    "description": "Label tombol submit sign up"
+  },
+  "signUpSuccessMessage": "Sign up berhasil!",
+  "@signUpSuccessMessage": {
+    "description": "Pesan snackbar ketika sign up berhasil"
+  },
+  "genericErrorMessage": "Terjadi kesalahan",
+  "@genericErrorMessage": {
+    "description": "Pesan error fallback ketika penyebab error tidak diketahui"
+  },
+  "emailRequiredError": "Email wajib diisi",
+  "@emailRequiredError": {
+    "description": "Validasi ketika field email kosong"
+  },
+  "emailInvalidError": "Format email tidak valid",
+  "@emailInvalidError": {
+    "description": "Validasi ketika format email salah"
+  },
+  "passwordRequiredError": "Password wajib diisi",
+  "@passwordRequiredError": {
+    "description": "Validasi ketika field password kosong"
+  },
+  "passwordTooShortError": "Password minimal 8 karakter",
+  "@passwordTooShortError": {
+    "description": "Validasi ketika password kurang dari 8 karakter"
+  }
+}
