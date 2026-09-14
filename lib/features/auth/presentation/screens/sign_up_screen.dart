@@ -21,21 +21,29 @@ class SignUpScreen extends HookConsumerWidget {
     final signUpState = ref.watch(signUpControllerProvider);
     final isLoading = signUpState.isLoading;
 
+    void showMessage(String message) {
+      if (!context.mounted) return;
+
+      ScaffoldMessenger.of(context)
+        ..clearSnackBars()
+        ..showSnackBar(
+          SnackBar(
+            content: Text(message),
+          ),
+        );
+    }
+
     ref.listen(signUpControllerProvider, (previous, next) {
       if (previous is! AsyncLoading) return;
 
       next.when(
         data: (_) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(context.l10n.signUpSuccessMessage),
-            ),
-          );
+          showMessage(context.l10n.signUpSuccessMessage);
           // TODO: navigasi ke halaman verify-email pakai go_router
         },
         error: (error, _) {
           final message = error is Failure ? error.message : context.l10n.genericErrorMessage;
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+          showMessage(message);
         },
         loading: () {},
       );
