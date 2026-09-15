@@ -1,3 +1,4 @@
+import 'package:agory_client_mobile/app/router/app_router.dart';
 import 'package:agory_client_mobile/core/error/failure.dart';
 import 'package:agory_client_mobile/core/extensions/build_context_extension.dart';
 import 'package:agory_client_mobile/core/utils/validators.dart';
@@ -6,6 +7,7 @@ import 'package:agory_client_mobile/core/widgets/app_text_field.dart';
 import 'package:agory_client_mobile/features/auth/application/sign_up_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SignUpScreen extends HookConsumerWidget {
@@ -39,7 +41,7 @@ class SignUpScreen extends HookConsumerWidget {
       next.when(
         data: (_) {
           showMessage(context.l10n.signUpSuccessMessage);
-          // TODO: navigasi ke halaman verify-email pakai go_router
+          context.go(AppRoutes.signIn);
         },
         error: (error, _) {
           final message = error is Failure ? error.message : context.l10n.genericErrorMessage;

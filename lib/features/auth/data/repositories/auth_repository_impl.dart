@@ -17,12 +17,25 @@ final class AuthRepositoryImpl implements AuthRepository {
   }) async {
     try {
       final response = await _remoteDatasource.signUp(
-        SignUpRequestModel(email: email, password: password),
+        SignUpRequestModel(
+          email: email,
+          password: password,
+        ),
       );
 
-      return Success(AuthAccount(id: response.id, email: response.email));
+      return Success(
+        AuthAccount(
+          id: response.id,
+          email: response.email,
+        ),
+      );
     } on ServerException catch (e) {
-      return ResultFailure(ServerFailure(code: e.code, message: e.message));
+      return ResultFailure(
+        ServerFailure(
+          code: e.code,
+          message: e.message,
+        ),
+      );
     } catch (_) {
       return const ResultFailure(UnknownFailure());
     }
