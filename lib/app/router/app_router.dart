@@ -1,3 +1,4 @@
+import 'package:agory_client_mobile/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:agory_client_mobile/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,7 +16,7 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoutes.signIn,
-      builder: (context, state) => const SignUpScreen(),
+      builder: (context, state) => const SignInScreen(),
     ),
   ],
 );

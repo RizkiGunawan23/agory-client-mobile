@@ -6,4 +6,9 @@ abstract interface class AuthRepository {
     required String email,
     required String password,
   });
+
+  Future<Result<AuthAccount>> signIn({
+    required String email,
+    required String password,
+  });
 }

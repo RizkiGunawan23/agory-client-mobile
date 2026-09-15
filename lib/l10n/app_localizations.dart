@@ -156,6 +156,24 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Password minimal 8 karakter'**
   String get passwordTooShortError;
+
+  /// Judul AppBar di halaman sign in
+  ///
+  /// In id, this message translates to:
+  /// **'Masuk'**
+  String get signInScreenTitle;
+
+  /// Label tombol submit sign in
+  ///
+  /// In id, this message translates to:
+  /// **'Masuk'**
+  String get signInButtonLabel;
+
+  /// Pesan snackbar ketika sign in berhasil
+  ///
+  /// In id, this message translates to:
+  /// **'Sign in berhasil!'**
+  String get signInSuccessMessage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

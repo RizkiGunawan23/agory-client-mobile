@@ -43,5 +43,17 @@
   "passwordTooShortError": "Password minimal 8 karakter",
   "@passwordTooShortError": {
     "description": "Validasi ketika password kurang dari 8 karakter"
+  },
+  "signInScreenTitle": "Masuk",
+  "@signInScreenTitle": {
+    "description": "Judul AppBar di halaman sign in"
+  },
+  "signInButtonLabel": "Masuk",
+  "@signInButtonLabel": {
+    "description": "Label tombol submit sign in"
+  },
+  "signInSuccessMessage": "Sign in berhasil!",
+  "@signInSuccessMessage": {
+    "description": "Pesan snackbar ketika sign in berhasil"
   }
 }

@@ -41,4 +41,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get passwordTooShortError => 'Password minimal 8 karakter';
+
+  @override
+  String get signInScreenTitle => 'Masuk';
+
+  @override
+  String get signInButtonLabel => 'Masuk';
+
+  @override
+  String get signInSuccessMessage => 'Sign in berhasil!';
 }
