@@ -32,7 +32,9 @@ class AppTextField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: label,
         suffixIcon: suffixIcon,
-        border: const OutlineInputBorder(),
+        border: const OutlineInputBorder(
+          borderRadius: .all(.circular(8.0)),
+        ),
       ),
     );
   }

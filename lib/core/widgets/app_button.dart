@@ -16,6 +16,14 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: isLoading ? null : onPressed,
+      style: ElevatedButton.styleFrom(
+        padding: const .symmetric(
+          vertical: 12,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: .circular(8),
+        ),
+      ),
       child: isLoading
           ? const SizedBox(
               height: 20,

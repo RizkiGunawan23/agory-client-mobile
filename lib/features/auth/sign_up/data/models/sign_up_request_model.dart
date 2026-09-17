@@ -10,6 +10,5 @@ abstract class SignUpRequestModel with _$SignUpRequestModel {
     required String password,
   }) = _SignUpRequestModel;
 
-  factory SignUpRequestModel.fromJson(Map<String, dynamic> json) =>
-      _$SignUpRequestModelFromJson(json);
+  factory SignUpRequestModel.fromJson(Map<String, dynamic> json) => _$SignUpRequestModelFromJson(json);
 }

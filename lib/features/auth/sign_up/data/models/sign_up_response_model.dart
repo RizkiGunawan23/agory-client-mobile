@@ -10,6 +10,5 @@ abstract class SignUpResponseModel with _$SignUpResponseModel {
     required String email,
   }) = _SignUpResponseModel;
 
-  factory SignUpResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$SignUpResponseModelFromJson(json);
+  factory SignUpResponseModel.fromJson(Map<String, dynamic> json) => _$SignUpResponseModelFromJson(json);
 }

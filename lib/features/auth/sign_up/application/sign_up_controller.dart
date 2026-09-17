@@ -12,11 +12,17 @@ class SignUpController extends _$SignUpController {
     // State awal: belum ada aksi apa pun.
   }
 
-  Future<void> signUp({required String email, required String password}) async {
+  Future<void> signUp({
+    required String email,
+    required String password,
+  }) async {
     state = const AsyncLoading();
 
     final repository = ref.read(authRepositoryProvider);
-    final result = await repository.signUp(email: email, password: password);
+    final result = await repository.signUp(
+      email: email,
+      password: password,
+    );
 
     state = result.when(
       success: (_) => const AsyncData(null),

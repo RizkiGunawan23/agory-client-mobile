@@ -4,14 +4,14 @@ import 'package:agory_client_mobile/core/extensions/build_context_extension.dart
 import 'package:agory_client_mobile/core/utils/validators.dart';
 import 'package:agory_client_mobile/core/widgets/app_button.dart';
 import 'package:agory_client_mobile/core/widgets/app_text_field.dart';
-import 'package:agory_client_mobile/features/auth/application/sign_up_controller.dart';
+import 'package:agory_client_mobile/features/auth/sign_in/application/sign_in_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SignUpScreen extends HookConsumerWidget {
-  const SignUpScreen({super.key});
+class SignInScreen extends HookConsumerWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,8 +20,8 @@ class SignUpScreen extends HookConsumerWidget {
     final passwordController = useTextEditingController();
     final obscurePassword = useState(true);
 
-    final signUpState = ref.watch(signUpControllerProvider);
-    final isLoading = signUpState.isLoading;
+    final loginState = ref.watch(signInControllerProvider);
+    final isLoading = loginState.isLoading;
 
     void showMessage(String message) {
       if (!context.mounted) return;
@@ -35,13 +35,13 @@ class SignUpScreen extends HookConsumerWidget {
         );
     }
 
-    ref.listen(signUpControllerProvider, (previous, next) {
+    ref.listen(signInControllerProvider, (previous, next) {
       if (previous is! AsyncLoading) return;
 
       next.when(
         data: (_) {
-          showMessage(context.l10n.signUpSuccessMessage);
-          context.go(AppRoutes.signIn);
+          showMessage(context.l10n.signInSuccessMessage);
+          context.go(AppRoutes.profile);
         },
         error: (error, _) {
           final message = error is Failure ? error.message : context.l10n.genericErrorMessage;
@@ -55,8 +55,8 @@ class SignUpScreen extends HookConsumerWidget {
       if (!(formKey.currentState?.validate() ?? false)) return;
 
       await ref
-          .read(signUpControllerProvider.notifier)
-          .signUp(
+          .read(signInControllerProvider.notifier)
+          .signIn(
             email: emailController.text.trim(),
             password: passwordController.text,
           );
@@ -64,7 +64,7 @@ class SignUpScreen extends HookConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.signUpScreenTitle),
+        title: Text(context.l10n.signInScreenTitle),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -101,7 +101,7 @@ class SignUpScreen extends HookConsumerWidget {
                   height: 24,
                 ),
                 AppButton(
-                  label: context.l10n.signUpButtonLabel,
+                  label: context.l10n.signInButtonLabel,
                   isLoading: isLoading,
                   onPressed: handleSubmit,
                 ),

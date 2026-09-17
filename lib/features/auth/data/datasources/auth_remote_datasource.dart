@@ -1,8 +1,8 @@
 import 'package:agory_client_mobile/core/constants/error_codes.dart';
-import 'package:agory_client_mobile/features/auth/data/models/sign_in_request_model.dart';
-import 'package:agory_client_mobile/features/auth/data/models/sign_in_response_model.dart';
-import 'package:agory_client_mobile/features/auth/data/models/sign_up_request_model.dart';
-import 'package:agory_client_mobile/features/auth/data/models/sign_up_response_model.dart';
+import 'package:agory_client_mobile/features/auth/sign_in/data/models/sign_in_request_model.dart';
+import 'package:agory_client_mobile/features/auth/sign_in/data/models/sign_in_response_model.dart';
+import 'package:agory_client_mobile/features/auth/sign_up/data/models/sign_up_request_model.dart';
+import 'package:agory_client_mobile/features/auth/sign_up/data/models/sign_up_response_model.dart';
 
 final class ServerException implements Exception {
   const ServerException({required this.code, required this.message});
